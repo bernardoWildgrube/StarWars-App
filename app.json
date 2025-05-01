@@ -1,0 +1,14 @@
+{
+    "expo": {
+      "name": "starwars-app",
+      "slug": "starwars-app",
+      "version": "1.0.0",
+      "sdkVersion": "52.0.0",
+      "platforms": ["ios", "android"],
+      "jsEngine": "hermes",
+      "updates": {
+        "fallbackToCacheTimeout": 0
+      },
+      "newArchEnabled": true
+    }
+  }

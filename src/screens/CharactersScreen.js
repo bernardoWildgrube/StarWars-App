@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ActivityIndicator, Button } from 'react-native';
-import axios from 'axios';
+import api from '../services/api'; // ✅ Aqui usa o api.js
 import CharacterCard from '../components/CharacterCard';
 
 const characterIds = {
@@ -19,12 +19,12 @@ const CharactersScreen = ({ navigation }) => {
     const fetchCharacters = async () => {
       try {
         const results = await Promise.all(
-          Object.values(characterIds).map(id => axios.get(`https://swapi.dev/api/people/${id}/`))
+          Object.values(characterIds).map(id => api.get(`/people/${id}/`))
         );
         setCharacters(results.map(res => res.data));
-        setLoading(false);
       } catch (error) {
         console.error('Erro ao carregar personagens:', error);
+      } finally {
         setLoading(false);
       }
     };
@@ -55,14 +55,6 @@ const CharactersScreen = ({ navigation }) => {
   );
 };
 
-export default CharactersScreen;
-
-// 🍜 Tutorial de Miojo (comentário obrigatório)
-// 1. Coloque água na panela e ferva
-// 2. Adicione o miojo e cozinhe por 3 minutos
-// 3. Misture o tempero e sirva!
-// Simples assim! Agora volte ao código.
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -73,3 +65,4 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 });
+export default CharactersScreen;
