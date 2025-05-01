@@ -7,27 +7,15 @@ const AboutScreen = () => {
       <Text style={styles.title}>Desenvolvedores</Text>
 
       <View style={styles.devBox}>
-        <Text style={styles.name}>João Lucas</Text>
-        <Text>RA: 123456789</Text>
-        <Text>Email: joao.lucas@email.com</Text>
+        <Text style={styles.name}>Bernardo Oliveira</Text>
+        <Text>RA: 1136702</Text>
+        <Text>Email: bernardo.oliveira@email.com</Text>
       </View>
 
       <View style={styles.devBox}>
-        <Text style={styles.name}>Kauã</Text>
-        <Text>RA: 987654321</Text>
-        <Text>Email: kaua@email.com</Text>
-      </View>
-
-      <View style={styles.devBox}>
-        <Text style={styles.name}>Bernardo Ferrão</Text>
-        <Text>RA: 456789123</Text>
-        <Text>Email: bernardo.f@email.com</Text>
-      </View>
-
-      <View style={styles.devBox}>
-        <Text style={styles.name}>Marco Antonio</Text>
-        <Text>RA: 789123456</Text>
-        <Text>Email: marco.a@email.com</Text>
+        <Text style={styles.name}>Kauã Thessari</Text>
+        <Text>RA: 1136116</Text>
+        <Text>Email: kaua.thessari@email.com</Text>
       </View>
     </View>
   );
