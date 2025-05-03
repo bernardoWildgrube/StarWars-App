@@ -1,38 +1,44 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
 const characterImages = {
-  'Luke Skywalker': require('../../assets/images/luke.png'),
-  'Darth Vader': require('../../assets/images/vader.png'),
-  'Han Solo': require('../../assets/images/han.png'),
-  'Yoda': require('../../assets/images/yoda.png'),
-  'Chewbacca': require('../../assets/images/chewbacca.png'),
+  Luke: require('../../assets/images/luke.jpg'),
+  Vader: require('../../assets/images/vader.jpg'),
+  Han: require('../../assets/images/han.jpg'),
+  Chewbacca: require('../../assets/images/chewbacca.jpg'),
+  Yoda: require('../../assets/images/yoda.jpg'),
 };
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ name }) => {
+  // Extrai apenas o primeiro nome, como 'Luke' de 'Luke Skywalker'
+  const characterKey = name.split(' ')[0]; 
+  const imageSource = characterImages[characterKey] || require('../../assets/images/luke.jpg');
+
   return (
     <View style={styles.card}>
-      <Image
-        source={characterImages[character.name]}
-        style={styles.image}
-        resizeMode="contain"
-      />
-      <Text style={styles.name}>{character.name}</Text>
+      <Image source={imageSource} style={styles.image} resizeMode="cover" />
+      <Text style={styles.name}>{name}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
+    backgroundColor: '#1e1e1e',
+    padding: 16,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 10,
     alignItems: 'center',
-    marginVertical: 10,
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
+    marginBottom: 10,
+    borderRadius: 60,
   },
   name: {
-    marginTop: 10,
+    color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
   },

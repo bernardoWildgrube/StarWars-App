@@ -43,7 +43,8 @@ const CharactersScreen = ({ navigation }) => {
               key={index}
               onPress={() => navigation.navigate('CharacterDetails', { character })}
             >
-              <CharacterCard character={character} />
+              {/* Passando o nome do personagem */}
+              <CharacterCard name={character.name} />
             </TouchableOpacity>
           ))
         )}
